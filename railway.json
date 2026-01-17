@@ -1,0 +1,20 @@
+{
+  "services": [
+    {
+      "name": "api",
+      "plan": "starter",
+      "runtime": "python",
+      "startCommand": "uvicorn server.api:app --host 0.0.0.0 --port $PORT",
+      "envs": [
+        {
+          "key": "DATABASE_URL",
+          "value": "${{ DATABASE_URL }}"
+        },
+        {
+          "key": "REDIS_URL",
+          "value": "${{ REDIS_URL }}"
+        }
+      ]
+    }
+  ]
+}

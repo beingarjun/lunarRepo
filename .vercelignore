@@ -1,0 +1,36 @@
+# Vercel Ignore Configuration
+
+# Build artifacts that don't need deployment
+__pycache__
+*.pyc
+dist/
+build/
+.git
+.env.local
+.env.test.local
+
+# Test files
+*.test.js
+*.test.ts
+test/
+tests/
+__tests__
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.circleci/
+
+# Documentation
+docs/
+*.md
+!README.md
+
+# Local development
+.env.development
+.vscode/
+.idea/
+
+# Logs
+logs/
+*.log

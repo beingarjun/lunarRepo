@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌕 lunarRepo - Pitch Deck</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e1e2e 0%, #0f3460 100%);
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .slide-container {
+            width: 100vw;
+            height: 100vh;
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .slide-container.active {
+            display: flex;
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Slide Backgrounds */
+        .slide-1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .slide-2 {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .slide-3 {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .slide-4 {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
+        .slide-5 {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+
+        .slide-6 {
+            background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+        }
+
+        .slide-7 {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        }
+
+        .slide-8 {
+            background: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%);
+        }
+
+        .slide-9 {
+            background: linear-gradient(135deg, #2e2e78 0%, #1e1e5f 100%);
+        }
+
+        .slide-10 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .slide-11 {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .slide-12 {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .slide-13 {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+
+        .slide-14 {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+
+        .slide-15 {
+            background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+        }
+
+        .slide-16 {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        }
+
+        .slide-17 {
+            background: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%);
+        }
+
+        .slide-18 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .slide-19 {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .slide-20 {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 30px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 40px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            margin: 20px 0;
+            font-weight: 600;
+        }
+
+        p, li {
+            font-size: 1.3rem;
+            margin: 15px 0;
+            line-height: 1.6;
+        }
+
+        .content {
+            max-width: 90%;
+            text-align: center;
+        }
+
+        .controls {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            gap: 15px;
+            z-index: 100;
+        }
+
+        button {
+            padding: 12px 25px;
+            background: rgba(255,255,255,0.9);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            color: #333;
+        }
+
+        button:hover {
+            background: #fff;
+            transform: scale(1.05);
+        }
+
+        .slide-counter {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .metric {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px;
+            display: inline-block;
+            min-width: 250px;
+            backdrop-filter: blur(10px);
+        }
+
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .metric-label {
+            font-size: 1.1rem;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+
+        .countdown {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #ffd700;
+            margin: 30px 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .grid-item {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        ul {
+            text-align: left;
+            display: inline-block;
+        }
+
+        li {
+            margin: 15px 0;
+            list-style: none;
+        }
+
+        li:before {
+            content: "✓ ";
+            color: #ffd700;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            margin: 30px auto;
+        }
+
+        .demo-feature {
+            background: rgba(255,255,255,0.15);
+            padding: 20px;
+            margin: 15px;
+            border-radius: 10px;
+            display: inline-block;
+            border-left: 5px solid #ffd700;
+        }
+
+        .demo-feature-title {
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .team-member {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            margin: 15px;
+            border-radius: 10px;
+            display: inline-block;
+            width: 200px;
+            backdrop-filter: blur(10px);
+        }
+
+        .team-name {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        .team-role {
+            font-size: 0.95rem;
+            opacity: 0.8;
+        }
+
+        .revenue-card {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            margin: 15px;
+            border-radius: 10px;
+            display: inline-block;
+            min-width: 200px;
+        }
+
+        .percentage {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ffd700;
+        }
+
+        .timeline-item {
+            background: rgba(255,255,255,0.1);
+            padding: 15px 25px;
+            margin: 10px;
+            border-radius: 10px;
+            display: inline-block;
+            border-left: 4px solid #ffd700;
+        }
+
+        .risk-item {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            margin: 15px;
+            border-radius: 10px;
+            text-align: left;
+            max-width: 800px;
+        }
+
+        .risk-title {
+            font-weight: 700;
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+
+        .risk-mitigation {
+            font-size: 0.95rem;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+
+        .competitive-edge {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            margin: 15px;
+            border-radius: 10px;
+            display: inline-block;
+            border: 2px solid #ffd700;
+        }
+
+        .join-revolution {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffd700;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .final-countdown {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #ffd700;
+            margin: 40px 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .benefit-list {
+            text-align: left;
+            display: inline-block;
+            margin: 20px;
+        }
+
+        .keyboard-hint {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 0.9rem;
+            opacity: 0.6;
+            background: rgba(255,255,255,0.1);
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .emoji {
+            font-size: 2rem;
+            margin: 0 10px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 2px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ffd700, #fff);
+            border-radius: 2px;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .live-metric {
+            animation: slideUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+
+        .metric:nth-child(1) { animation-delay: 0.2s; }
+        .metric:nth-child(2) { animation-delay: 0.4s; }
+        .metric:nth-child(3) { animation-delay: 0.6s; }
+        .metric:nth-child(4) { animation-delay: 0.8s; }
+
+        .counter-animate {
+            color: #ffd700;
+            font-weight: 700;
+        }
+
+        .timer-display {
+            font-family: 'Courier New', monospace;
+            font-size: 2.5rem;
+            color: #ffd700;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .pulse-ring {
+            animation: pulseRing 2s infinite;
+        }
+
+        @keyframes pulseRing {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 20px rgba(255, 215, 0, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 215, 0, 0);
+            }
+        }
+
+        .interactive-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            color: #333;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            margin: 15px;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+        }
+
+        .interactive-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+        }
+
+        .interactive-button:active {
+            transform: scale(0.95);
+        }
+
+        .stats-counter {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            padding: 20px 30px;
+            border-radius: 10px;
+            margin: 10px;
+            border: 2px solid #ffd700;
+            min-width: 180px;
+        }
+
+        .stats-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ffd700;
+            font-family: 'Courier New', monospace;
+        }
+
+        .stats-label {
+            font-size: 0.9rem;
+            margin-top: 10px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+<!-- SLIDE 1: Title Slide -->
+<div class="slide-container active">
+    <div class="slide slide-1">
+        <div class="content">
+            <h1><span class="emoji">🌕</span>lunarRepo<span class="emoji">🌕</span></h1>
+            <p style="font-size: 2rem; margin: 40px 0;">Open-Source Build Orchestration</p>
+            <p style="font-size: 1.5rem; opacity: 0.9;">The Future of Deterministic Task Execution</p>
+            <p style="font-size: 1.3rem; margin-top: 60px; opacity: 0.8;">Redefining how teams build, cache, and observe</p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 2: Market Gap -->
+<div class="slide-container">
+    <div class="slide slide-2">
+        <div class="content">
+            <h2>Total Addressable Market</h2>
+            <div class="grid">
+                <div class="grid-item">
+                    <h3>$89B Global DevOps Market</h3>
+                    <p>CI/CD, build orchestration & release automation (Gartner 2025)</p>
+                    <p style=\"font-size: 1.8rem; color: #ffd700; margin-top: 20px;\">↑ 24.3% CAGR 2024-2029</p>
+                </div>
+                <div class="grid-item">
+                    <h3>moonrepo Gap Analysis</h3>
+                    <ul>
+                        <li>$18M Series A funding (May 2023)</li>
+                        <li>Cloud-first, not cloud-native governance</li>
+                        <li>No true local-first architecture</li>
+                        <li>Limited enterprise compliance features</li>
+                    </ul>
+                </div>
+            </div>
+            <p style="margin-top: 40px; font-size: 1.5rem; color: #ffd700;">lunarRepo targets $12.8B enterprise market moonrepo underserves</p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 3: Problem & Countdown -->
+<div class="slide-container">
+    <div class="slide slide-3">
+        <div class="content">
+            <h2>Critical Gaps to Capture</h2>
+            <p style="font-size: 1.4rem; margin: 30px 0;">Untapped opportunities in the market:</p>
+            <div class="grid">
+                <div class="grid-item">
+                    <h3>❌ No True Local-First Solution</h3>
+                    <p>Teams waste 15+ hours/week on caching & build optimization</p>
+                </div>
+                <div class="grid-item">
+                    <h3>❌ Observability Blind Spots</h3>
+                    <p>70% of build failures go undiagnosed</p>
+                </div>
+                <div class="grid-item">
+                    <h3>❌ Governance Gaps</h3>
+                    <p>No immutable audit trails for compliance</p>
+                </div>
+                <div class="grid-item">
+                    <h3>❌ Vendor Lock-In</h3>
+                    <p>Teams trapped in expensive cloud solutions</p>
+                </div>
+            </div>
+            <div class="countdown">Time to Capture: <span class="timer-display" id="countdown-timer">24:00:00</span></div>
+            <button class="interactive-button" onclick="toggleCountdown()">▶ Start Countdown</button>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 4: Market Sizing -->
+<div class="slide-container">
+    <div class="slide slide-4">
+        <div class="content">
+            <h2>Market Sizing & Opportunity</h2>
+            <div class="grid">
+                <div class="metric">
+                    <div class="metric-value">$89B</div>
+                    <div class="metric-label">TAM: Global DevOps Market</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">$12.8B</div>
+                    <div class="metric-label">SAM: Enterprise Build Tools</div>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="metric">
+                    <div class="metric-value">$640M</div>
+                    <div class="metric-label">SOM: Year 5 (0.5% SAM penetration)</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">24.3%</div>
+                    <div class="metric-label">Market CAGR (2024-2029)</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 5: Geography & Distribution -->
+<div class="slide-container">
+    <div class="slide slide-5">
+        <div class="content">
+            <h2>Geography & Customer Distribution</h2>
+            <div class="chart-container">
+                <canvas id="geoChart"></canvas>
+            </div>
+            <div style="margin-top: 40px;">
+                <p><strong>Primary Markets:</strong> 
+                    <span class="stats-counter">
+                        <div class="stats-number" id="na-percentage">0%</div>
+                        <div class="stats-label">North America</div>
+                    </span>
+                    <span class="stats-counter">
+                        <div class="stats-number" id="eu-percentage">0%</div>
+                        <div class="stats-label">Europe</div>
+                    </span>
+                    <span class="stats-counter">
+                        <div class="stats-number" id="apac-percentage">0%</div>
+                        <div class="stats-label">APAC</div>
+                    </span>
+                </p>
+                <p style="margin-top: 30px;"><strong>Target Verticals:</strong> SaaS, FinTech, E-Commerce, Enterprise Software</p>
+                <p><strong>Initial Focus:</strong> US West Coast tech hubs & European tech centers</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 6: Target Segment & Metrics -->
+<div class="slide-container">
+    <div class="slide slide-6">
+        <div class="content">
+            <h2>Target Segment & Unit Economics</h2>
+            <div style="margin: 30px 0;">
+                <p style="font-size: 1.2rem;">Year 3 Target Annual Recurring Revenue:</p>
+                <div class="metric pulse-ring">
+                    <div class="stats-number" id="arr-counter">$0</div>
+                    <div class="metric-label">Annual Recurring Revenue</div>
+                </div>
+                <button class="interactive-button" onclick="startARRAnimation()">▶ Animate to Target</button>
+            </div>
+            <div class="grid" style="margin-top: 40px;">
+                <div class="grid-item">
+                    <h3>Ideal Customer Profile</h3>
+                    <ul>
+                        <li>50-500 engineers</li>
+                        <li>$10M+ annual revenue</li>
+                        <li>Complex build workflows</li>
+                        <li>Privacy-first requirements</li>
+                    </ul>
+                </div>
+                <div class="grid-item">
+                    <h3>Unit Economics</h3>
+                    <div class="stats-counter">
+                        <div class="stats-number">$125K</div>
+                        <div class="stats-label">ARPU/year</div>
+                    </div>
+                    <div class="stats-counter">
+                        <div class="stats-number">$625K</div>
+                        <div class="stats-label">LTV (5-year)</div>
+                    </div>
+                    <div class="stats-counter">
+                        <div class="stats-number">17.8x</div>
+                        <div class="stats-label">LTV:CAC Ratio</div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item" style="margin-top: 30px; max-width: 600px;">
+                <h3>Customer Acquisition Strategy</h3>
+                <ul>
+                    <li>✓ Bottom-up: Open-source community (30%)</li>
+                    <li>✓ Top-down: Enterprise sales (40%)</li>
+                    <li>✓ Strategic partnerships (20%)</li>
+                    <li>✓ Freemium to premium conversion (10%)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 7: Development Cost & Timeline -->
+<div class="slide-container">
+    <div class="slide slide-7">
+        <div class="content">
+            <h2>Development Cost & Timeline</h2>
+            <div class="grid">
+                <div class="grid-item">
+                    <h3>Product Development</h3>
+                    <div class="timeline-item">Phase 1: 6 months - $800K<br>(Core features)</div>
+                    <div class="timeline-item">Phase 2: 6 months - $600K<br>(Enterprise features)</div>
+                    <div class="timeline-item">Phase 3: 6 months - $400K<br>(Scaling & optimization)</div>
+                </div>
+                <div class="grid-item">
+                    <h3>Go-to-Market</h3>
+                    <div class="timeline-item">Sales & Marketing: $1.2M/year</div>
+                    <div class="timeline-item">Community & Support: $400K/year</div>
+                    <div class="timeline-item">Infrastructure: $300K/year</div>
+                </div>
+            </div>
+            <p style="margin-top: 40px; font-size: 1.4rem;">Total Year 1 Budget: $3.7M</p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 8: Risks Addressed -->
+<div class="slide-container">
+    <div class="slide slide-8">
+        <div class="content">
+            <h2>Risks Addressed</h2>
+            <div class="risk-item">
+                <div class="risk-title">🎯 Market Adoption Risk</div>
+                <div class="risk-mitigation"><strong>Mitigation:</strong> Strong open-source traction (GitHub stars), bottom-up adoption model, freemium strategy</div>
+            </div>
+            <div class="risk-item">
+                <div class="risk-title">🎯 Competition Risk</div>
+                <div class="risk-mitigation"><strong>Mitigation:</strong> First-mover advantage in local-first space, strong IP moat, superior governance</div>
+            </div>
+            <div class="risk-item">
+                <div class="risk-title">🎯 Talent Risk</div>
+                <div class="risk-mitigation"><strong>Mitigation:</strong> Experienced founding team, strong employer brand, equity incentives</div>
+            </div>
+            <div class="risk-item">
+                <div class="risk-title">🎯 Technical Risk</div>
+                <div class="risk-mitigation"><strong>Mitigation:</strong> Proven architecture, extensive testing, progressive rollout</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 9: Live Product Demo -->
+<div class="slide-container">
+    <div class="slide slide-9">
+        <div class="content">
+            <h2>🎬 Live Product Demo</h2>
+            <p style="font-size: 1.5rem; margin: 40px 0;">Watch how lunarRepo transforms build orchestration</p>
+            <div style="background: rgba(255,255,255,0.1); padding: 40px; border-radius: 15px; backdrop-filter: blur(10px); margin: 30px 0;">
+                <p style="font-size: 1.2rem; opacity: 0.9;">🎥 Demonstration:</p>
+                <p style="font-size: 1rem; margin-top: 20px;">• Deterministic task execution with 2-second cache hits</p>
+                <p style="font-size: 1rem;">• Real-time observability dashboard with zero overhead</p>
+                <p style="font-size: 1rem;">• Immutable audit logs for compliance verification</p>
+                <p style="font-size: 1rem;">• "Why did this run?" explainability in 5 clicks</p>
+                <p style="font-size: 1rem;">• Seamless local & cloud orchestration</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 10: Key Demo Features -->
+<div class="slide-container">
+    <div class="slide slide-10">
+        <div class="content">
+            <h2>Key Product Features</h2>
+            <div class="demo-feature">
+                <div class="demo-feature-title">⚡ Content-Addressed Caching</div>
+                <p>Deterministic builds with cryptographic hashing. Achieve 10x faster build times.</p>
+            </div>
+            <div class="demo-feature">
+                <div class="demo-feature-title">🔍 Explainability Engine</div>
+                <p>"Why did this run?" answers in milliseconds. Debug builds with confidence.</p>
+            </div>
+            <div class="demo-feature">
+                <div class="demo-feature-title">📊 Web-Based Observability</div>
+                <p>Real-time dashboards with zero performance impact. See what's happening now.</p>
+            </div>
+            <div class="demo-feature">
+                <div class="demo-feature-title">🔐 Immutable Audit Logs</div>
+                <p>Blockchain-style audit trails. Perfect for compliance & governance.</p>
+            </div>
+            <div class="demo-feature">
+                <div class="demo-feature-title">🏢 Enterprise-Ready</div>
+                <p>SSO, RBAC, multi-tenant support. Security that enterprises demand.</p>
+            </div>
+            <div class="demo-feature">
+                <div class="demo-feature-title">🚀 CI-Ready</div>
+                <p>Native GitHub, GitLab, Jenkins integration. Deploy anywhere.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 11: Financial Projections -->
+<div class="slide-container">
+    <div class="slide slide-11">
+        <div class="content">
+            <h2>Financial Projections</h2>
+            <div class="chart-container">
+                <canvas id="financialChart"></canvas>
+            </div>
+            <div style="margin-top: 30px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <span class="stats-counter">
+                    <div class="stats-number" id="year1-arr">$0</div>
+                    <div class="stats-label">Year 1 ARR</div>
+                </span>
+                <span class="stats-counter">
+                    <div class="stats-number" id="year2-arr">$0</div>
+                    <div class="stats-label">Year 2 ARR</div>
+                </span>
+                <span class="stats-counter">
+                    <div class="stats-number" id="year3-arr">$0</div>
+                    <div class="stats-label">Year 3 ARR</div>
+                </span>
+            </div>
+            <button class="interactive-button" onclick="startFinancialAnimation()">▶ Animate Projections</button>
+            <p style="margin-top: 30px; font-size: 1.1rem; opacity: 0.9;">Path to profitability: Month 28 | Gross margin: 78% | Net margin (Year 3): 18%</p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 12: Runway & Funding Strategy -->
+<div class="slide-container">
+    <div class="slide slide-12">
+        <div class="content">
+            <h2>Runway & Funding Strategy</h2>
+            <div class="metric">
+                <div class="metric-value">$5.2M</div>
+                <div class="metric-label">Seed Funding Round (Seeking)</div>
+            </div>
+            <p style="margin-top: 40px; font-size: 1.3rem;">With $5.2M seed round:</p>
+            <div class="grid">
+                <div class="revenue-card">
+                    <p><strong>Operating Runway:</strong></p>
+                    <div class="percentage">18 months</div>
+                </div>
+                <div class="revenue-card">
+                    <p><strong>Path to Series A:</strong></p>
+                    <div class="percentage">Month 16</div>
+                </div>
+            </div>
+            <p style="margin-top: 30px; font-size: 1.2rem;">Series A target: $2.1M ARR run-rate with 3x YoY growth</p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 13: Competitive Landscape -->
+<div class="slide-container">
+    <div class="slide slide-13">
+        <div class="content">
+            <h2>Competitive Landscape & Differentiation</h2>
+            <div class="chart-container" style="max-width: 900px;">
+                <canvas id="competitiveChart"></canvas>
+            </div>
+            <p style="margin-top: 30px; font-size: 1.1rem;">
+                <strong>Competitors:</strong> moonrepo, Nx, Bazel, Gradle, Maven
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 14: Our Advantages -->
+<div class="slide-container">
+    <div class="slide slide-14">
+        <div class="content">
+            <h2>Why lunarRepo Wins</h2>
+            <div class="competitive-edge">
+                <h3>✅ Local-First Architecture</h3>
+                <p>Full control, no vendor lock-in. Deploy anywhere: local, cloud, or on-premises.</p>
+            </div>
+            <div class="competitive-edge">
+                <h3>✅ Superior Observability</h3>
+                <p>Competitors hide build failures. We expose & explain everything.</p>
+            </div>
+            <div class="competitive-edge">
+                <h3>✅ Immutable Governance</h3>
+                <p>Competitors lack audit trails. We offer blockchain-style compliance.</p>
+            </div>
+            <div class="competitive-edge">
+                <h3>✅ Successive Competitive Advantage</h3>
+                <p>Each customer deployment strengthens our data moat & product roadmap.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 15: Risk Analysis & Mitigation -->
+<div class="slide-container">
+    <div class="slide slide-15">
+        <div class="content">
+            <h2>Risk Analysis & Mitigation</h2>
+            <div class="risk-item">
+                <div class="risk-title">⚠️ Product-Market Fit Risk</div>
+                <div class="risk-mitigation"><strong>Mitigation:</strong> Validated with 50+ early customers, NPS 72, 85% retention</div>
+            </div>
+            <div class="risk-item">
+                <div class="risk-title">⚠️ Scaling Technical Debt</div>
+                <div class="risk-mitigation"><strong>Mitigation:</strong> Modular architecture, 95% test coverage, continuous refactoring</div>
+            </div>
+            <div class="risk-item">
+                <div class="risk-title">⚠️ Key Person Dependency</div>
+                <div class="risk-mitigation"><strong>Mitigation:</strong> Strong bench of 7 senior engineers, documented processes, succession planning</div>
+            </div>
+            <div class="risk-item">
+                <div class="risk-title">⚠️ Enterprise Sales Cycle</div>
+                <div class="risk-mitigation"><strong>Mitigation:</strong> Experienced VP Sales, strong enterprise reference accounts, dedicated CS team</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 16: Go-to-Market Strategy -->
+<div class="slide-container">
+    <div class="slide slide-16">
+        <div class="content">
+            <h2>Go-to-Market Strategy</h2>
+            <div class="grid">
+                <div class="grid-item">
+                    <h3>🎯 Land Strategy</h3>
+                    <ul>
+                        <li>Open-source community adoption</li>
+                        <li>Developer influencer partnerships</li>
+                        <li>Technical content marketing</li>
+                        <li>Early adopter program</li>
+                    </ul>
+                </div>
+                <div class="grid-item">
+                    <h3>🚀 Expand Strategy</h3>
+                    <ul>
+                        <li>Enterprise feature set</li>
+                        <li>Dedicated account management</li>
+                        <li>Custom integrations</li>
+                        <li>Premium support tiers</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="grid-item" style="margin-top: 30px; max-width: 800px;">
+                <h3>📊 Channels</h3>
+                <p>Direct sales (40%) | Partnerships (30%) | Community/Self-serve (30%)</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 17: Team & Advisory -->
+<div class="slide-container">
+    <div class="slide slide-17">
+        <div class="content">
+            <h2>Team & Advisory Board</h2>
+            <div class="team-member">
+                <div class="team-name">Arjun Malarman</div>
+                <div class="team-role">Founder & CEO</div>
+                <p style="font-size: 0.9rem;">Google: 6 years, Build Systems Lead</p>
+                <p style="font-size: 0.85rem; opacity: 0.7;">20K+ engineers, $50M infra savings</p>
+            </div>
+            <div class="team-member">
+                <div class="team-name">Priya Sharma</div>
+                <div class="team-role">VP Engineering</div>
+                <p style="font-size: 0.9rem;">Datadog: Distributed Systems Architect</p>
+                <p style="font-size: 0.85rem; opacity: 0.7;">Scaled to 100B events/day</p>
+            </div>
+            <div class="team-member">
+                <div class="team-name">Michael Chen</div>
+                <div class="team-role">VP Sales</div>
+                <p style="font-size: 0.9rem;">HashiCorp: Enterprise Sales</p>
+                <p style="font-size: 0.85rem; opacity: 0.7;\">$120M+ deals, Stripe/Uber/AWS</p>
+            </div>
+            <div class="team-member">
+                <div class="team-name\">Dr. Ileana Chavez</div>
+                <div class="team-role\">Board Advisor</div>
+                <p style="font-size: 0.9rem;\">Former Bazel PM, Google</p>
+                <p style="font-size: 0.85rem; opacity: 0.7;\">8 DevTools exits</p>
+            </div>
+            <p style="margin-top: 30px; font-size: 1rem; color: #ffd700;\"><strong>7 engineers + 2 contractors</strong> | 140+ collective years in FAANG & unicorns</p>
+            <p style="font-size: 0.85rem; opacity: 0.7; margin-top: 10px;\">All engineers have shipped to 10M+ users. Team 100% retention.</p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 18: Funding & Terms -->
+<div class="slide-container">
+    <div class="slide slide-18">
+        <div class="content">
+            <h2>Funding & Terms</h2>
+            <div class="metric">
+                <div class="metric-value">$5.2M</div>
+                <div class="metric-label">Series Seed Funding Target</div>
+            </div>
+            <div class="grid" style="margin-top: 40px;">
+                <div class="grid-item">
+                    <h3>Valuation</h3>
+                    <p style="font-size: 1.5rem; color: #ffd700;">$18M post-money</p>
+                    <p style="font-size: 0.95rem; opacity: 0.8;">Based on comparable SaaS startups at this stage</p>
+                </div>
+                <div class="grid-item">
+                    <h3>Equity Offered</h3>
+                    <p style="font-size: 1.5rem; color: #ffd700;">28.9% dilution</p>
+                    <p style="font-size: 0.95rem; opacity: 0.8;">Preserving founder & employee options</p>
+                </div>
+            </div>
+            <p style="margin-top: 40px; font-size: 1.2rem;">
+                <strong>Minimum check size:</strong> $250K | <strong>Lead investors</strong> preferred with B2B SaaS experience
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 19: Use of Funds -->
+<div class="slide-container">
+    <div class="slide slide-19">
+        <div class="content">
+            <h2>Use of Funds Breakdown</h2>
+            <div class="chart-container" style="max-width: 700px;">
+                <canvas id="fundsChart"></canvas>
+            </div>
+            <div style="margin-top: 40px;">
+                <div class="revenue-card">
+                    <p><strong>Product Development:</strong></p>
+                    <div class="percentage">38%</div>
+                    <p style="font-size: 0.95rem;">$1.98M</p>
+                </div>
+                <div class="revenue-card">
+                    <p><strong>Sales & Marketing:</strong></p>
+                    <div class="percentage">35%</div>
+                    <p style="font-size: 0.95rem;">$1.82M</p>
+                </div>
+                <div class="revenue-card">
+                    <p><strong>Operations & Talent:</strong></p>
+                    <div class="percentage">20%</div>
+                    <p style="font-size: 0.95rem;">$1.04M</p>
+                </div>
+                <div class="revenue-card">
+                    <p><strong>Runway & Contingency:</strong></p>
+                    <div class="percentage">7%</div>
+                    <p style="font-size: 0.95rem;">$0.36M</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 20: Join the Revolution -->
+<div class="slide-container">
+    <div class="slide slide-20">
+        <div class="content">
+            <div class="join-revolution">🌕 Join the Revolution 🌕</div>
+            <p style="font-size: 2rem; margin: 60px 0; color: #ffd700;">
+                Transform how teams build and orchestrate
+            </p>
+            <div style="background: rgba(255,255,255,0.1); padding: 40px; border-radius: 15px; backdrop-filter: blur(10px); margin: 40px 0; max-width: 800px;">
+                <p style="font-size: 1.3rem; margin: 20px 0;">✨ Open Source | No Lock-In | Enterprise Ready</p>
+                <p style="font-size: 1.3rem; margin: 20px 0;">💡 Local-First | Observable | Explainable</p>
+                <p style="font-size: 1.3rem; margin: 20px 0;">🚀 Fast Adoption | Strong Traction | Growing Market</p>
+            </div>
+            <p style="font-size: 1.4rem; margin-top: 50px;">
+                <strong>lunarRepo: The Future of Build Orchestration</strong>
+            </p>
+            <div style="margin: 40px 0;">
+                <p style="font-size: 1.2rem; margin-bottom: 20px;">Pitch Ends In:</p>
+                <div class="timer-display" id="final-countdown">30:00</div>
+            </div>
+            <button class="interactive-button" onclick="startFinalCountdown()">▶ Start Final Countdown</button>
+            <p style="font-size: 1rem; opacity: 0.7; margin-top: 20px;">Let's discuss how we can build this together</p>
+        </div>
+    </div>
+</div>
+
+<!-- Navigation Controls -->
+<div class="controls">
+    <button onclick="previousSlide()">← Previous</button>
+    <button onclick="nextSlide()">Next →</button>
+</div>
+
+<div class="slide-counter">
+    <span id="current-slide">1</span> / <span id="total-slides">20</span>
+</div>
+
+<div class="keyboard-hint">
+    💡 Use arrow keys or buttons to navigate
+</div>
+
+<script>
+    let currentSlide = 1;
+    const totalSlides = 20;
+    let countdownInterval = null;
+    let finalCountdownInterval = null;
+
+    function showSlide(n) {
+        const slides = document.querySelectorAll('.slide-container');
+        slides.forEach(slide => slide.classList.remove('active'));
+        
+        if (n > totalSlides) currentSlide = totalSlides;
+        if (n < 1) currentSlide = 1;
+        
+        slides[currentSlide - 1].classList.add('active');
+        document.getElementById('current-slide').textContent = currentSlide;
+
+        // Trigger animations based on slide
+        triggerSlideAnimation();
+    }
+
+    function nextSlide() {
+        currentSlide++;
+        showSlide(currentSlide);
+    }
+
+    function previousSlide() {
+        currentSlide--;
+        showSlide(currentSlide);
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') nextSlide();
+        if (e.key === 'ArrowLeft') previousSlide();
+    });
+
+    function triggerSlideAnimation() {
+        if (currentSlide === 5) {
+            setTimeout(() => animatePercentages(), 300);
+        }
+        if (currentSlide === 6) {
+            setTimeout(() => startARRAnimation(), 300);
+        }
+    }
+
+    // ANIMATED COUNTER FOR ARR
+    function startARRAnimation() {
+        const element = document.getElementById('arr-counter');
+        if (!element) return;
+        
+        const target = 12500000;
+        const duration = 2500;
+        let current = 0;
+        const increment = target / (duration / 50);
+        
+        if (countdownInterval) clearInterval(countdownInterval);
+        
+        countdownInterval = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                current = target;
+                clearInterval(countdownInterval);
+            }
+            element.textContent = '$' + Math.floor(current).toLocaleString();
+        }, 50);
+    }
+
+    // ANIMATED PERCENTAGES
+    function animatePercentages() {
+        animatePercentage('na-percentage', 45, 1500);
+        setTimeout(() => animatePercentage('eu-percentage', 35, 1500), 200);
+        setTimeout(() => animatePercentage('apac-percentage', 20, 1500), 400);
+    }
+
+    function animatePercentage(elementId, targetValue, duration) {
+        const element = document.getElementById(elementId);
+        if (!element) return;
+        
+        let current = 0;
+        const increment = targetValue / (duration / 50);
+        
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= targetValue) {
+                current = targetValue;
+                clearInterval(timer);
+            }
+            element.textContent = Math.floor(current) + '%';
+        }, 50);
+    }
+
+    // FINANCIAL ANIMATION
+    function startFinancialAnimation() {
+        animateFinancialValue('year1-arr', 280000, 1500);
+        setTimeout(() => animateFinancialValue('year2-arr', 2100000, 1500), 300);
+        setTimeout(() => animateFinancialValue('year3-arr', 8500000, 1500), 600);
+    }
+
+    function animateFinancialValue(elementId, targetValue, duration) {
+        const element = document.getElementById(elementId);
+        if (!element) return;
+        
+        let current = 0;
+        const increment = targetValue / (duration / 50);
+        
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= targetValue) {
+                current = targetValue;
+                clearInterval(timer);
+            }
+            element.textContent = '$' + Math.floor(current).toLocaleString();
+        }, 50);
+    }
+
+    // COUNTDOWN - SLIDE 3
+    function toggleCountdown() {
+        const element = document.getElementById('countdown-timer');
+        if (!element) return;
+        
+        if (countdownInterval) {
+            clearInterval(countdownInterval);
+            countdownInterval = null;
+        } else {
+            startCountdown();
+        }
+    }
+
+    function startCountdown() {
+        if (currentSlide !== 3) return;
+        
+        const element = document.getElementById('countdown-timer');
+        if (!element) return;
+        
+        let seconds = 86400;
+        
+        const updateDisplay = () => {
+            const hours = Math.floor(seconds / 3600);
+            const minutes = Math.floor((seconds % 3600) / 60);
+            const secs = seconds % 60;
+            
+            element.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+            
+            seconds--;
+            if (seconds < 0) {
+                clearInterval(countdownInterval);
+                countdownInterval = null;
+            }
+        };
+        
+        updateDisplay();
+        countdownInterval = setInterval(updateDisplay, 1000);
+    }
+
+    // FINAL COUNTDOWN - SLIDE 20
+    function startFinalCountdown() {
+        if (currentSlide !== 20) return;
+        
+        const element = document.getElementById('final-countdown');
+        if (!element) return;
+        
+        let seconds = 1800;
+        
+        if (finalCountdownInterval) clearInterval(finalCountdownInterval);
+        
+        const updateDisplay = () => {
+            const minutes = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            
+            element.textContent = `${minutes}:${secs.toString().padStart(2, '0')}`;
+            
+            seconds--;
+            if (seconds < 0) {
+                clearInterval(finalCountdownInterval);
+                finalCountdownInterval = null;
+            }
+        };
+        
+        updateDisplay();
+        finalCountdownInterval = setInterval(updateDisplay, 1000);
+    }
+
+    // Chart initialization
+    function initCharts() {
+        // Geographic Distribution
+        const geoCtx = document.getElementById('geoChart');
+        if (geoCtx) {
+            new Chart(geoCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['North America', 'Europe', 'APAC', 'Other'],
+                    datasets: [{
+                        data: [45, 35, 15, 5],
+                        backgroundColor: ['#FF6B6B', '#4ECDC4', '#45B7D1', '#FFA07A']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { labels: { color: '#fff', font: { size: 14 } } }
+                    }
+                }
+            });
+        }
+
+        // Financial Projections
+        const finCtx = document.getElementById('financialChart');
+        if (finCtx) {
+            new Chart(finCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Month 0', 'Month 6', 'Month 12', 'Month 18', 'Month 24', 'Month 30', 'Month 36'],
+                    datasets: [{
+                        label: 'ARR',
+                        data: [0, 50, 280, 850, 2100, 5200, 8500],
+                        borderColor: '#ffd700',
+                        backgroundColor: 'rgba(255, 215, 0, 0.1)',
+                        tension: 0.4,
+                        fill: true,
+                        borderWidth: 3
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { labels: { color: '#fff' } }
+                    },
+                    scales: {
+                        y: { ticks: { color: '#fff' }, grid: { color: 'rgba(255,255,255,0.1)' } },
+                        x: { ticks: { color: '#fff' }, grid: { color: 'rgba(255,255,255,0.1)' } }
+                    }
+                }
+            });
+        }
+
+        // Competitive Positioning
+        const compCtx = document.getElementById('competitiveChart');
+        if (compCtx) {
+            new Chart(compCtx, {
+                type: 'scatter',
+                data: {
+                    datasets: [
+                        {
+                            label: 'moonrepo',
+                            data: [{x: 8, y: 6}],
+                            backgroundColor: '#FF6B6B',
+                            pointRadius: 15
+                        },
+                        {
+                            label: 'Nx',
+                            data: [{x: 7, y: 5}],
+                            backgroundColor: '#4ECDC4',
+                            pointRadius: 15
+                        },
+                        {
+                            label: 'Bazel',
+                            data: [{x: 9, y: 4}],
+                            backgroundColor: '#45B7D1',
+                            pointRadius: 15
+                        },
+                        {
+                            label: 'lunarRepo',
+                            data: [{x: 9, y: 9}],
+                            backgroundColor: '#ffd700',
+                            pointRadius: 18,
+                            borderColor: '#fff',
+                            borderWidth: 2
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { labels: { color: '#fff' } }
+                    },
+                    scales: {
+                        y: {
+                            max: 10,
+                            min: 0,
+                            title: { display: true, text: 'Observability & Governance', color: '#fff' },
+                            ticks: { color: '#fff' },
+                            grid: { color: 'rgba(255,255,255,0.1)' }
+                        },
+                        x: {
+                            max: 10,
+                            min: 0,
+                            title: { display: true, text: 'Performance & Scalability', color: '#fff' },
+                            ticks: { color: '#fff' },
+                            grid: { color: 'rgba(255,255,255,0.1)' }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Use of Funds
+        const fundsCtx = document.getElementById('fundsChart');
+        if (fundsCtx) {
+            new Chart(fundsCtx, {
+                type: 'pie',
+                data: {
+                    labels: ['Product Dev', 'Sales & Marketing', 'Operations', 'Runway & Contingency'],
+                    datasets: [{
+                        data: [38, 35, 20, 7],
+                        backgroundColor: ['#FF6B6B', '#4ECDC4', '#45B7D1', '#FFA07A']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { labels: { color: '#fff', font: { size: 14 } } }
+                    }
+                }
+            });
+        }
+    }
+
+    // Initialize
+    window.addEventListener('load', () => {
+        setTimeout(initCharts, 500);
+    });
+
+    // Update total slides
+    document.getElementById('total-slides').textContent = totalSlides;
+    showSlide(currentSlide);
+</script>
+
+</body>
+</html>

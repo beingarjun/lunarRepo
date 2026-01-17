@@ -1,0 +1,20 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "other",
+  "env": [
+    {
+      "key": "PYTHON_VERSION",
+      "value": "3.11"
+    },
+    {
+      "key": "DATABASE_URL",
+      "value": "@database_url"
+    },
+    {
+      "key": "REDIS_URL",
+      "value": "@redis_url"
+    }
+  ],
+  "regions": ["sfo1"]
+}
