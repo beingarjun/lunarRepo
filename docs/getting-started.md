@@ -272,8 +272,26 @@ venv\Scripts\activate.bat
 - 📖 Read the [Deployment Guide](../DEPLOYMENT_GUIDE.md) to deploy to production
 - 💼 Check the [Business Plan](../BUSINESS_PLAN.md) for market insights
 - 🎬 View the [Pitch Deck](../pitch-deck.html) for company overview
+- ☁️ Learn about [Lunar Cloud](../docs/faq.md#what-is-lunar-cloud) (launching 2027)
 - 👥 Join our [Discord Community](https://discord.gg/lunarrepo)
 - 🤝 Start [Contributing](https://github.com/beingarjun/lunarRepo/blob/main/CONTRIBUTING.md)
+
+## Cloud Features (Lunar Cloud - Launching 2027)
+
+Lunar Cloud is an optional managed service that complements your self-hosted lunarRepo instance:
+
+**Features:**
+- **Distributed Cache Network** - Global cache distribution for teams across multiple regions
+- **Team Insights Dashboard** - Repository analytics, dependency patterns, build trends
+- **Remote Execution** - Run builds and tests on geo-distributed infrastructure
+- **No Vendor Lock-in** - Your data stays yours; easy export anytime
+
+**Pricing:**
+- **Free** - Open-source projects and community teams
+- **Team Plan** ($200/month) - Up to 20 engineers, shared cache, team insights
+- **Enterprise Plan** ($500/month) - Unlimited users, advanced analytics, custom features
+
+For details, see [Lunar Cloud FAQ](../docs/faq.md#what-is-lunar-cloud).
 
 ## Need Help?
 

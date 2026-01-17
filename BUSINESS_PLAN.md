@@ -113,10 +113,18 @@ lunarRepo is an open-source, local-first build orchestration and task execution 
 
 ### Revenue Model
 
-**Pricing Tiers:**
+**Dual Revenue Streams:**
+
+**1. lunarRepo Enterprise (Self-Hosted)**
 - **Starter:** $20K/year (small teams, <100 engineers)
 - **Professional:** $100K/year (500-1000 engineers, on-prem)
 - **Enterprise:** $250K-$500K/year (custom, full compliance)
+
+**2. Lunar Cloud (Planned 2027 - Cloud Companion Service)**
+- **Free Tier:** Open-source projects, community teams
+- **Team Plan:** $200/month (shared cache, team insights, up to 20 engineers)
+- **Enterprise Plan:** $500/month (distributed execution, advanced analytics, unlimited users)
+- **Custom:** Volume and compliance pricing available
 
 ### 3-Year Forecast
 

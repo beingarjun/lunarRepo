@@ -27,11 +27,26 @@ lunarRepo is an open-source, local-first build orchestration platform designed f
 
 Yes! lunarRepo is open source and free forever under the Apache 2.0 license. We also offer:
 - **Community Support** - Free, community-driven
-- **Enterprise** - $180K-$500K/year with priority support and compliance features
+- **Enterprise Self-Hosted** - $180K-$500K/year with priority support and compliance features
+- **Lunar Cloud** (launching 2027) - Optional managed cloud service with distributed performance
+
+### What is Lunar Cloud?
+
+Lunar Cloud is an optional companion service launching in 2027 that provides:
+- **Distributed cache network** for global performance optimization
+- **Team insights dashboard** with repository patterns and dependency analysis
+- **Remote execution** across geo-distributed infrastructure
+- **Free tier** for open-source projects
+- **Team Plan** ($200/month) for growing development teams
+- **Enterprise Plan** ($500/month) with advanced analytics and custom features
+
+### Will lunarRepo always be free?
+
+Absolutely. The open-source core will remain free and Apache 2.0 licensed forever. Lunar Cloud is completely optional—you're never required to use it. Your data always remains yours, and there's zero vendor lock-in.
 
 ### Can I self-host lunarRepo?
 
-Absolutely! lunarRepo is designed to be self-hosted. You can deploy it on-premises, in your private cloud, or use our managed cloud offering (coming Q1 2026).
+Yes! lunarRepo is designed to be self-hosted. You can deploy it on-premises, in your private cloud, or use our managed cloud offering (coming Q1 2026). Lunar Cloud is optional and separate.
 
 ---
 

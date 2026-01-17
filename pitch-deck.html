@@ -133,7 +133,9 @@
             background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
         }
 
-        h1 {
+        .slide-21 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
             font-size: 4rem;
             margin-bottom: 30px;
             font-weight: 700;
@@ -1056,9 +1058,45 @@
     </div>
 </div>
 
-<!-- SLIDE 20: Join the Revolution -->
+<!-- SLIDE 20: Lunar Cloud - Managed Cloud Service -->
 <div class="slide-container">
     <div class="slide slide-20">
+        <div class="content">
+            <h1 style="font-size: 3rem; margin-bottom: 30px;">☁️ Lunar Cloud</h1>
+            <p style="font-size: 1.8rem; margin: 30px 0; color: #87ceeb;">Optional Managed Service (Launching 2027)</p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 40px 0; max-width: 1000px;">
+                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 12px; backdrop-filter: blur(10px);">
+                    <h3 style="color: #ffd700; margin-bottom: 15px;">🌐 Features</h3>
+                    <ul style="font-size: 1.1rem; text-align: left; line-height: 2;">
+                        <li>✅ Distributed cache network</li>
+                        <li>✅ Team insights dashboard</li>
+                        <li>✅ Remote execution</li>
+                        <li>✅ No vendor lock-in</li>
+                    </ul>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.1); padding: 25px; border-radius: 12px; backdrop-filter: blur(10px);">
+                    <h3 style="color: #ffd700; margin-bottom: 15px;">💰 Pricing</h3>
+                    <ul style="font-size: 1.1rem; text-align: left; line-height: 2;">
+                        <li><strong>Free:</strong> OSS projects</li>
+                        <li><strong>Team:</strong> $200/month</li>
+                        <li><strong>Enterprise:</strong> $500/month</li>
+                        <li><strong>Custom:</strong> Volume pricing</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="background: rgba(255,165,0,0.2); padding: 20px; border-radius: 12px; border: 2px solid #ffd700; margin-top: 30px; max-width: 900px;">
+                <p style="font-size: 1.2rem; margin: 0;"><strong>🎯 Vision:</strong> Make global build infrastructure as easy as Git, with optional managed hosting for teams that want it.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SLIDE 21: Join the Revolution -->
+<div class="slide-container">
+    <div class="slide slide-21">
         <div class="content">
             <div class="join-revolution">🌕 Join the Revolution 🌕</div>
             <p style="font-size: 2rem; margin: 60px 0; color: #ffd700;">
@@ -1098,7 +1136,7 @@
 
 <script>
     let currentSlide = 1;
-    const totalSlides = 20;
+    const totalSlides = 21;
     let countdownInterval = null;
     let finalCountdownInterval = null;
 
