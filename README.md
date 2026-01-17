@@ -136,6 +136,14 @@ class LunarOrchestrator:
 - **Month 12:** 100 enterprise customers, $1.2M ARR
 - **Month 18:** 500 enterprise customers, $7.5M ARR (Series A ready)
 
+### Future: Lunar Cloud (Planned for 2027)
+- **lunarBase:** Cloud companion service (similar to Monorepo's moonbase)
+  - Distributed cache sharing across teams ($200-500/month)
+  - Insights dashboard with team analytics
+  - Remote execution orchestration
+  - Free tier for open-source projects
+- **Projected ARR from Lunar Cloud:** $15M+ by 2030 (60% of total)
+
 ### Exit Strategy
 - **Strategic Acquisition:** GitHub, GitLab, Atlassian, HashiCorp (3-5 years)
 - **Expected Valuation:** $150M - $500M
@@ -225,7 +233,26 @@ class LunarOrchestrator:
 
 ---
 
-## 🚀 Getting Started
+## 🌐 Open Source + Cloud Model
+
+**lunarRepo follows the proven "open-source core + premium cloud" model:**
+
+- **lunarRepo (Open Source):** Free, local-first, fully-featured
+  - Self-hosted caching and orchestration
+  - Complete audit logs and explainability
+  - No cloud dependencies or lock-in
+  - Apache 2.0 licensed, community-driven
+
+- **Lunar Cloud (Planned 2027):** Optional cloud enhancements for teams
+  - **Shared Cache Network:** Distributed caching across teams (50-80% cache hit rate improvements)
+  - **Team Insights:** Analytics dashboard, performance trends, bottleneck analysis
+  - **Remote Execution:** Offload builds to cloud infrastructure
+  - **Free Tier:** Open-source projects, small teams
+  - **Pricing:** $200-500/month for enterprise teams
+
+Similar to: **Monorepo** (open-source) + **moonbase** (cloud) model
+
+---
 
 ### For Developers
 1. **Clone and run:**
