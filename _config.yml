@@ -1,0 +1,57 @@
+# 🌕 lunarRepo GitHub Pages Configuration
+
+title: lunarRepo
+description: Open-source, local-first build orchestration platform
+url: https://beingarjun.github.io
+baseurl: /lunarRepo
+
+# Theme
+theme: jekyll-theme-slate
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+
+# Author
+author:
+  name: lunarRepo Team
+  email: hello@lunarrepo.dev
+
+# Social
+social:
+  links:
+    - https://github.com/beingarjun/lunarRepo
+    - https://twitter.com/lunarrepo
+    - https://discord.gg/lunarrepo
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Analytics
+google_analytics: G-XXXXXXXXXX
+
+# SEO
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /lunarRepo/assets/images/og-image.png
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .github
+  - core/
+  - server/
+  - storage/
+  - ci/
+  - .gitignore
+  - .env.example
+  - Dockerfile
+  - requirements.txt
