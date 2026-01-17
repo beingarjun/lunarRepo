@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>lunarRepo – Execution History</h2>
+<pre id="out">Loading…</pre>
+<script>
+fetch("/runs")
+.then(r => r.json())
+.then(d => document.getElementById("out").innerText =
+  JSON.stringify(d, null, 2));
+</script>
+</body>
+</html>

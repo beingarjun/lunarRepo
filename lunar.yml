@@ -1,0 +1,14 @@
+projects:
+  api:
+    deps: []
+    tasks:
+      build:
+        cmd: "echo Building API"
+      test:
+        cmd: "echo Testing API"
+
+  web:
+    deps: [api]
+    tasks:
+      build:
+        cmd: "echo Building Web"
