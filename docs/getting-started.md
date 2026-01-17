@@ -5,6 +5,18 @@ title: Getting Started
 
 # 🚀 Getting Started with lunarRepo
 
+**LUNAR** = **L**ocal-first **U**niversal **N**ative **A**udit-ready **R**epository and task orchestration
+
+## Why lunarRepo vs Other Tools?
+
+Unlike Moonrepo — which builds tooling for multi-project codebases with cloud-first monorepo automation — lunarRepo is **local-first, deterministic, and governance-ready**:
+
+- ✅ **No cloud lock-in** - Run fully locally or on-premises
+- ✅ **Deterministic by design** - 100% reproducible builds every time
+- ✅ **Immutable audit trails** - Full compliance for regulated industries
+- ✅ **Open-source** - Community-driven, no vendor lock-in
+- ✅ **Explainability built-in** - Instant answers to "why did this run?"
+
 ## Prerequisites
 
 Before you begin, ensure you have the following installed:

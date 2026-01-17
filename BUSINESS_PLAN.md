@@ -1,8 +1,10 @@
 # 🌕 lunarRepo - Complete Business Plan
 
+**LUNAR** = **L**ocal-first **U**niversal **N**ative **A**udit-ready **R**epository and task orchestration
+
 ## Executive Summary
 
-lunarRepo is an open-source, local-first build orchestration and task execution platform designed for enterprise teams. Unlike moonrepo's cloud-first approach, lunarRepo provides deterministic builds, immutable audit trails, and complete governance without vendor lock-in.
+lunarRepo is an open-source, local-first build orchestration and task execution platform designed for enterprise teams. While Moonrepo builds tooling for multi-project codebases and monorepo automation with cloud-first infrastructure, lunarRepo provides deterministic builds, immutable audit trails, and complete governance without vendor lock-in or cloud dependency.
 
 **Market Opportunity:** $12.8B serviceable addressable market
 **First Year Revenue Target:** $280K ARR (6 customers)
@@ -163,11 +165,11 @@ lunarRepo is an open-source, local-first build orchestration and task execution 
 
 ### Direct Competitors
 
-| Competitor | Strength | Weakness | Our Advantage |
+| Competitor | Offering | Weakness | Our Advantage |
 |------------|----------|----------|----------------|
-| moonrepo | Cloud-native, VC-backed | Cloud lock-in, expensive | Local-first, open-source |
-| Nx | Monorepo ecosystem | Not scalable to 1000+ engineers | Enterprise-ready, governance |
-| Bazel | Google-backed, powerful | Steep learning curve | Explainability, ease-of-use |
+| **Moonrepo** | Builds tooling for multi-project codebases + monorepo task automation with standardized environments. Cloud-first with paid moonbase service. | Cloud lock-in, expensive ($30K-500K/year), vendor lock-in, no local-first option | Local-first, open-source, deterministic, immutable audit trails, zero lock-in |
+| **Nx** | Enterprise monorepo tooling, plugin ecosystem, cloud optional | Not scalable to 1000+ engineers, limited explainability | Enterprise governance, audit trails, scalable architecture |
+| **Bazel** | Google-backed, powerful multi-language builds | Steep learning curve, verbose configuration | Explainability, ease-of-use, developer experience |
 
 ### Competitive Advantages
 

@@ -5,6 +5,8 @@ title: FAQ
 
 # ❓ Frequently Asked Questions
 
+**LUNAR** = **L**ocal-first **U**niversal **N**ative **A**udit-ready **R**epository and task orchestration
+
 ## General
 
 ### What is lunarRepo?
@@ -12,6 +14,8 @@ title: FAQ
 lunarRepo is an open-source, local-first build orchestration platform designed for teams that want Google-scale build systems without vendor lock-in. It provides deterministic builds, complete explainability, and enterprise governance.
 
 ### How is lunarRepo different from Moonrepo/Nx/Turborepo?
+
+**Moonrepo** is tooling that makes large, multi-project codebases easier to work with — especially in monorepo setups — by automating builds, managing tasks intelligently, and standardizing environments across teams. They're cloud-native with a paid moonbase service, which creates vendor lock-in. Other tools like Nx and Turborepo offer different tradeoffs.
 
 | Feature | lunarRepo | Moonrepo | Nx | Turborepo |
 |---------|-----------|---------|----|----|

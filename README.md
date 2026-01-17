@@ -1,6 +1,8 @@
 # 🌕 lunarRepo – Local-First Build & Task Orchestration
 
-> **Deterministic, explainable pipelines for builds, tests, and data workflows — local-first, audit-ready, zero cloud lock-in**
+> **LUNAR** = **L**ocal-first **U**niversal **N**ative **A**udit-ready **R**epository and task orchestration
+> 
+> Deterministic, explainable pipelines for builds, tests, and data workflows — local-first, audit-ready, zero cloud lock-in
 
 [![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-CLI%20+%20Dashboard-blue?style=for-the-badge)](#-live-demo---experience-the-difference)
 [![Pitch Deck](https://img.shields.io/badge/📊_Pitch_Deck-View_Now-green?style=for-the-badge)](./PITCH_DECK.md)
@@ -180,8 +182,11 @@ class LunarOrchestrator:
 - **Our Advantage:** 100% deterministic, content-addressed cache, full "why" lineage
 - **Market Impact:** 50-80% faster builds, 10x faster debugging
 
-### vs Modern Build Tools (Bazel, Nx, Turborepo)
-- **Their Limitation:** Complex setup, language-specific, no audit trails
+### vs Modern Build Tools (Bazel, Nx, Turborepo, Moonrepo)
+- **Moonrepo:** Builds tooling that makes large, multi-project codebases easier to work with — especially in monorepo setups — by automating builds, managing tasks intelligently, and standardizing environments across teams. Cloud-native, VC-backed.
+  - **Limitation:** Cloud lock-in, expensive ($30K-500K/year), not explainability-focused
+  - **Our Advantage:** Local-first, open-source, deterministic, governance-first
+- **Other Tools (Bazel, Nx, Turborepo):** Complex setup, language-specific, no audit trails
 - **Our Advantage:** Universal orchestrator, explainability-first, compliance-ready
 - **Market Impact:** Broader adoption, regulatory-friendly
 
