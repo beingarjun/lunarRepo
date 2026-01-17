@@ -103,6 +103,20 @@ Yes! lunarRepo works well with:
 - ✅ Bazel
 - ✅ Maven
 
+### What advanced features does lunarRepo support?
+
+**Complete Feature Set:**
+- **Project Graph Generation** - Auto-discover project dependencies
+- **Code Generation** - Scaffold projects from templates
+- **Dependency Workspaces** - Support for distinct dependency trees per project
+- **Code Ownership** - Declare owners and generate CODEOWNERS files
+- **Webhook Events** - Integrate with external monitoring and metrics systems
+- **Git Hooks** - Enforce workflows and contributor requirements
+- **Flakiness Detection** - Automatic retries and failure pattern detection
+- **Terminal Notifications** - Real-time build status notifications
+- **Remote Caching** - Share builds across team (local-first default, cloud optional)
+- **Incremental Builds** - Only rebuild projects that changed since last build
+
 ### How do I migrate from Moonrepo/Nx?
 
 See our [Migration Guide](https://github.com/beingarjun/lunarRepo/wiki/Migration-Guide) for step-by-step instructions. Migration typically takes 2-4 weeks depending on project complexity.

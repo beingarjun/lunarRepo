@@ -153,7 +153,35 @@ class LunarOrchestrator:
 
 ---
 
-## 🎯 Customer Segments
+## 🎯 Complete Feature Set
+
+### Management
+- **Smart Hashing** - Collects inputs from multiple sources to ensure deterministic, reproducible builds
+- **Remote Caching** - Persists builds, hashes, and caches across teams and CI/CD environments
+- **Integrated Toolchain** - Automatically downloads and manages explicit tool versions for consistency
+- **Multi-Platform** - Runs natively on Linux, macOS, and Windows with full feature parity
+
+### Organization
+- **Project Graph** - Auto-generates dependency and dependent relationships between projects
+- **Code Generation** - Scaffold new applications, libraries, and tooling from templates
+- **Dependency Workspaces** - Works with package manager workspaces for distinct dependency trees
+- **Code Ownership** - Declare owners, maintainers, and support channels; auto-generate CODEOWNERS files
+
+### Orchestration
+- **Dependency Graph** - Generates precise dependency graphs to maximize parallelization and performance
+- **Action Pipeline** - Executes actions in parallel respecting dependencies using thread pools
+- **Action Distribution** - Distributes actions across multiple machines to increase throughput (via Lunar Cloud)
+- **Incremental Builds** - Smart hashing enables rebuilding only projects changed since last build
+
+### Observability & Governance
+- **Immutable Audit Trails** - Every run, dependency, and change is logged immutably (compliance-ready)
+- **Explainability Engine** - Instant answers to "Why did this task run?" in <150ms
+- **Webhook Events** - Receive webhooks for every event in the pipeline for metrics and insights
+- **Flakiness Detection** - Automatic retry logic and detection of intermittent failures
+- **Terminal Notifications** - Get notified of build successes/failures in your terminal
+- **Git Hooks** - Manage Git hooks to enforce workflows and contributor requirements
+
+---
 
 ### 🏢 Enterprise Engineering Teams (60% of revenue)
 - **Target:** 5,000 companies with 50+ engineers

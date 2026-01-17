@@ -182,6 +182,94 @@ pytest tests/test_cache.py -v
 
 ## Common Commands
 
+### Project & Workspace Commands
+
+```bash
+# Initialize new project
+lunar init <project-name>
+
+# Generate project graph
+lunar graph
+
+# Generate code (scaffold)
+lunar generate <template-name>
+
+# Show code ownership
+lunar owners
+```
+
+### Build & Task Execution
+
+```bash
+# Configure build system
+lunar configure
+
+# Run build with deterministic hashing
+lunar run build
+
+# Execute specific task
+lunar run task-name
+
+# Run tasks for changed projects only (incremental)
+lunar run task-name --changed-only
+
+# Clear cache
+lunar cache clear
+
+# View cache status
+lunar cache status
+
+# Get build explanation (explainability engine)
+lunar explain <build-id>
+
+# List all builds
+lunar history
+```
+
+### Monitoring & Governance
+
+```bash
+# View project dependencies
+lunar deps
+
+# Generate CODEOWNERS file
+lunar codeowners generate
+
+# Setup git hooks
+lunar hooks setup
+
+# View git hooks
+lunar hooks list
+
+# Monitor for flaky tests
+lunar flaky-report
+```
+
+### API Commands
+
+```bash
+# Create build with deterministic execution
+curl -X POST http://localhost:8000/api/builds \
+  -H "Content-Type: application/json" \
+  -d '{"project": "my-project", "config": {...}}'
+
+# Get build status
+curl http://localhost:8000/api/builds/{build_id}
+
+# Get build logs
+curl http://localhost:8000/api/builds/{build_id}/logs
+
+# Explain build (explainability engine)
+curl http://localhost:8000/api/builds/{build_id}/explain
+
+# Webhook events (metrics/insights)
+curl -X POST http://localhost:8000/api/webhooks \
+  -H "Content-Type: application/json" \
+  -d '{"url": "https://your-metrics-service.com/events"}'
+```
+
+## Common Commands
+
 ### CLI Commands
 
 ```bash
